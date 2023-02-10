@@ -32,7 +32,73 @@ const coffeeInventoryList = [
     quantityLbs: 130, 
     soldOut: false,
     id: v4()
-  }    
+  },
+
+  {
+    name: "Guatemala La Antigua Los Volcanes", 
+    origin: "Finca Covadonga and Finca La Guatelupe", 
+    pricePerLb: 17.50, 
+    roast: "medium",
+    tastingNotes: "Cocoa & Hard Candy Sweetness", 
+    quantityLbs: 130, 
+    soldOut: false,
+    id: v4()
+  },
+
+  {
+    name: "Guatemala La Antigua Los Volcanes", 
+    origin: "Finca Covadonga and Finca La Guatelupe", 
+    pricePerLb: 17.50, 
+    roast: "medium",
+    tastingNotes: "Cocoa & Hard Candy Sweetness", 
+    quantityLbs: 130, 
+    soldOut: false,
+    id: v4()
+  },
+  
+  {
+    name: "Guatemala La Antigua Los Volcanes", 
+    origin: "Finca Covadonga and Finca La Guatelupe", 
+    pricePerLb: 17.50, 
+    roast: "medium",
+    tastingNotes: "Cocoa & Hard Candy Sweetness", 
+    quantityLbs: 130, 
+    soldOut: false,
+    id: v4()
+  },
+
+  {
+    name: "Guatemala La Antigua Los Volcanes", 
+    origin: "Finca Covadonga and Finca La Guatelupe", 
+    pricePerLb: 17.50, 
+    roast: "medium",
+    tastingNotes: "Cocoa & Hard Candy Sweetness", 
+    quantityLbs: 130, 
+    soldOut: false,
+    id: v4()
+  },
+
+  {
+    name: "Guatemala La Antigua Los Volcanes", 
+    origin: "Finca Covadonga and Finca La Guatelupe", 
+    pricePerLb: 17.50, 
+    roast: "medium",
+    tastingNotes: "Cocoa & Hard Candy Sweetness", 
+    quantityLbs: 130, 
+    soldOut: false,
+    id: v4()
+  },
+
+  {
+    name: "Guatemala La Antigua Los Volcanes", 
+    origin: "Finca Covadonga and Finca La Guatelupe", 
+    pricePerLb: 17.50, 
+    roast: "medium",
+    tastingNotes: "Cocoa & Hard Candy Sweetness", 
+    quantityLbs: 130, 
+    soldOut: false,
+    id: v4()
+  }
 ]
 
 export default coffeeInventoryList;

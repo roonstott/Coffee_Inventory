@@ -1,8 +1,14 @@
 import React from 'react'; 
 
-function CoffeeDetail () {
+function CoffeeDetail ({item, onHomeClick}) {
   return (
-    <p>This is a coffee detail</p>
+    <React.Fragment>
+      <div>
+        <button onClick={onHomeClick}>Go Home</button>
+        <p>This is a coffee detail</p>
+        <p>{item.name}</p>
+      </div>
+    </React.Fragment>
   )
 }
 
