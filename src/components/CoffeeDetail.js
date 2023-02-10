@@ -5,3 +5,5 @@ function CoffeeDetail () {
     <p>This is a coffee detail</p>
   )
 }
+
+export default CoffeeDetail;

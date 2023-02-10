@@ -1,11 +1,13 @@
 import React from 'react';
-import CoffeeGallery from './CoffeeGallery'
+import CoffeeGallery from './CoffeeGallery';
+import coffeeInventoryList from './coffeeInventoryList';
+import Header from './Header';
 
 class CoffeeControl extends React.Component {
   constructor (props) {
     super(props); 
     this.state = {
-      inventory: [],
+      inventory: coffeeInventoryList,
       showDetails: false,
       displayItem: null
     }
@@ -19,7 +21,10 @@ class CoffeeControl extends React.Component {
 
 
     return (
-      <CoffeeGallery />
+      <React.Fragment>
+        <Header />
+        <CoffeeGallery galleryDisplay={this.state.inventory}/>
+      </React.Fragment>
     );
   }
 };

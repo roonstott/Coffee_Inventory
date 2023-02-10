@@ -1,3 +1,4 @@
+import { v4 } from 'uuid';
 
 const coffeeInventoryList = [
   {
@@ -7,7 +8,8 @@ const coffeeInventoryList = [
     roast: "light",
     tastingNotes: "Apricot, peach, & blueberry",
     quantityLbs: 130, 
-    soldOut: false
+    soldOut: false,
+    id: v4()
   },
 
   {
@@ -17,7 +19,8 @@ const coffeeInventoryList = [
     roast: "light",
     tastingNotes: "Cherry, Orange, Cocoa & Carmelized Sugar", 
     quantityLbs: 130, 
-    soldOut: false
+    soldOut: false,
+    id: v4()
   },
 
   {
@@ -27,6 +30,9 @@ const coffeeInventoryList = [
     roast: "medium",
     tastingNotes: "Cocoa & Hard Candy Sweetness", 
     quantityLbs: 130, 
-    soldOut: false
+    soldOut: false,
+    id: v4()
   }    
 ]
+
+export default coffeeInventoryList;

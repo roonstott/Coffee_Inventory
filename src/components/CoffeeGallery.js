@@ -1,10 +1,27 @@
 import React from 'react';
-import CoffeeDetail from './CoffeeDetail';
 
-function CoffeeGallery () {
+function CoffeeGallery (props) {
 
 
   return (
-    <p>This is the coffee gallery</p>
+    <React.Fragment>
+      {
+        props.galleryDisplay.map((item, index) => {
+          return (
+            <div key={item.id} className="flex-col justify">
+              <p>{item.name}</p>
+              <p>{item.origin}</p>
+              <p>{item.pricePerLb}</p>
+              <p>{item.roast}</p>
+              <p>{item.tastingNotes}</p>
+            </div>
+          )
+        })
+      }
+
+    </React.Fragment>
+
   );
 }
+
+export default CoffeeGallery; 
