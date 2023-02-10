@@ -21,11 +21,7 @@ function CoffeeGallery ({galleryDisplay, onItemClick}) {
         return tile;        
       })
     )
-  }
-
-  // const whenItemIsClicked = (id) => {
-  //   props.onItemClick(id);
-  // }
+  }  
 
   return (
     <React.Fragment>

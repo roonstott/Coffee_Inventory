@@ -1,10 +1,10 @@
 import React from 'react'; 
 
-function CoffeeDetail ({item, onHomeClick}) {
+function CoffeeDetail ({item, onBackClick}) {
   return (
     <React.Fragment>
       <div>
-        <button onClick={onHomeClick}>Go Home</button>
+        <button onClick={onBackClick}>Back To All Coffee</button>
         <p>This is a coffee detail</p>
         <p>{item.name}</p>
       </div>
