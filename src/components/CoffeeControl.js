@@ -65,20 +65,49 @@ class CoffeeControl extends React.Component {
         viewMessage: "Items added to cart",
         showView: "Buy"
       });
-      console.log("cart :", updatedCart); 
     }
   }
 
+  handleCartEdit = (id, changeAmt) => {
+    let item = this.state.cart.filter(item => item.id === id)[0];
+    item.orderAmt = changeAmt;
+    console.log("change Amt :", changeAmt)
+    let updatedCart = this.state.cart.filter(item => item.id !== id).concat(item);    
+    console.log("updated cart after item add", updatedCart)
+    this.setState({
+      cart: updatedCart,
+      displayItem: null,
+      showView: "Cart"
+    });
+  }
+
+  handlePlaceOrder = () => {
+    const updatedAfterOrder = this.state.inventory.map(order => {
+        const itemWasOrdered = this.state.cart.filter(cartItem => cartItem.id === order.id);
+        if (itemWasOrdered.length > 0) {
+          order.quantityLbs -= itemWasOrdered[0].orderAmt
+        }
+        return order;            
+      })
+    
+    this.setState({
+      cart: [],
+      inventory: updatedAfterOrder,
+      showView: "Buy"
+    })    
+  }
+
   render() {
+
     let currentView;
     if (this.state.displayItem) {
-      currentView = <CoffeeDetail onAddToCart={this.handleAddToCart} message={this.state.viewMessage} onBackClick={this.handleBackClick} item={this.state.displayItem} />
+      currentView = <CoffeeDetail onAddToCart={this.handleAddToCart} message={this.state.viewMessage} onBackClick={this.handleBackClick} item={this.state.displayItem} cart={this.state.cart} />
     } else if (this.state.showView === "Home") {
       currentView = <Home />
     } else if (this.state.showView === "About") {
       currentView = <About />
     } else if (this.state.showView === "Cart") {
-      currentView = <Cart />
+      currentView = <Cart cart={this.state.cart} onCartEdit={this.handleCartEdit} onPlaceOrder={this.handlePlaceOrder} message={this.state.viewMessage} />
     } else if (this.state.showView === "Buy") {
       currentView = <CoffeeGallery onItemClick={this.handleItemClick} galleryDisplay={this.state.inventory}/>
     } else {

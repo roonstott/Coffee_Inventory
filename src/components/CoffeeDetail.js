@@ -1,28 +1,22 @@
-import React from 'react'; 
+import React from 'react';
+import NewToCart from './NewToCart'
+import AlreadyInCart from './AlreadyInCart'
 
-function CoffeeDetail ({item, onBackClick, onAddToCart, message}) {
+function CoffeeDetail ({item, onBackClick, onAddToCart, message, cart}) {  
 
-  function addToCart(event) {
-    event.preventDefault();
-    const qty = parseInt(event.target.qty.value);
-    const id = item.id;
-    onAddToCart(id, qty);
+  const inCart = cart.filter(cartItem => cartItem.id === item.id);
+  let view; 
+  if (inCart.length > 0) {
+    view = <AlreadyInCart />
+  } else {
+    view = <NewToCart item={item} onAddToCart = {onAddToCart} message={message} />
   }
 
   return (
-    <React.Fragment>
-      <div>
-        <form onSubmit={addToCart}>
-          <label>Enter the quantity in pounds (lbs)</label>
-          <input type="text" name="qty" placeholder='Quantity' />
-          <button type="submit">Add To Cart</button>
-        </form>
-        <button onClick={onBackClick}>Back To All Coffee</button>
-        <p>This is a coffee detail</p>
-        <p>{item.name}</p>
-        <p>{message}</p>
-      </div>
-    </React.Fragment>
+   <React.Fragment>
+      {view}
+      <button onClick={onBackClick}>Back To All Coffee</button>
+   </React.Fragment>
   )
 }
 
