@@ -29,7 +29,8 @@ class CoffeeControl extends React.Component {
   handleNavBarClick = (view) => {
     this.setState({
       displayItem: null,
-      showView: view      
+      showView: view,
+      viewMessage: ""    
     });    
   }
 
@@ -46,39 +47,33 @@ class CoffeeControl extends React.Component {
     if (item["quantityLbs"] < qty) {
       this.setState({
         displayItem: item,
-        viewMessage: "Not enough inventory. Try adding a smaller amount",
-        showView: "Buy"
+        viewMessage: "Not enough inventory. Try adding a smaller amount"
       })
     } else {
-      let duplicate = this.state.cart.filter(item => item.id === id)[0];
-      let updatedCart;
-      if (duplicate) {
-        duplicate["orderAmt"] += qty;
-        updatedCart = this.state.cart.filter(item => item.id !== id).concat(duplicate);
-      } else {
-        item["orderAmt"] = qty;
-        updatedCart = this.state.cart.concat(item);
-      }      
+      item["orderAmt"] = qty;
+      const updatedCart = this.state.cart.concat(item);  
       this.setState({
         displayItem: item,
         cart: updatedCart,
-        viewMessage: "Items added to cart",
-        showView: "Buy"
+        viewMessage: "Items added to cart"
       });
     }
   }
 
   handleCartEdit = (id, changeAmt) => {
     let item = this.state.cart.filter(item => item.id === id)[0];
-    item.orderAmt = changeAmt;
-    console.log("change Amt :", changeAmt)
-    let updatedCart = this.state.cart.filter(item => item.id !== id).concat(item);    
-    console.log("updated cart after item add", updatedCart)
-    this.setState({
-      cart: updatedCart,
-      displayItem: null,
-      showView: "Cart"
-    });
+    if (changeAmt > item.quantityLbs) {
+      this.setState({
+        viewMessage: "Not enough inventory. Try adding a smaller amount"
+      })
+    } else {
+      item.orderAmt = changeAmt;
+      let updatedCart = this.state.cart.filter(item => item.id !== id).concat(item);    
+      this.setState({
+        cart: updatedCart,
+        viewMessage: ""
+      });
+    }
   }
 
   handlePlaceOrder = () => {
@@ -101,7 +96,7 @@ class CoffeeControl extends React.Component {
 
     let currentView;
     if (this.state.displayItem) {
-      currentView = <CoffeeDetail onAddToCart={this.handleAddToCart} message={this.state.viewMessage} onBackClick={this.handleBackClick} item={this.state.displayItem} cart={this.state.cart} />
+      currentView = <CoffeeDetail onAddToCart={this.handleAddToCart} message={this.state.viewMessage} onBackClick={this.handleBackClick} item={this.state.displayItem} cart={this.state.cart} onCartEdit={this.handleCartEdit}/>
     } else if (this.state.showView === "Home") {
       currentView = <Home />
     } else if (this.state.showView === "About") {
