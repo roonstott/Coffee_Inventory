@@ -14,8 +14,10 @@ function CoffeeDetail ({item, onBackClick, onAddToCart, onCartEdit, message, car
 
   return (
    <React.Fragment>
+    <div className="border-2 border-black">
       {view}
-      <button onClick={onBackClick}>Back To All Coffee</button>
+      <button className="border-2 border-black p-2 rounded-lg outline outline-offset-2" onClick={onBackClick}>Back To All Coffee</button>
+    </div>
    </React.Fragment>
   )
 }

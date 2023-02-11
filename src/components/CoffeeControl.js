@@ -40,6 +40,9 @@ class CoffeeControl extends React.Component {
       displayItem: item,
       viewMessage: ""
     });
+    if (this.state.cart.filter(item => item.id === id)[0]) {
+      this.setState({viewMessage: "This item is already in your cart"})
+    }
   }
 
   handleAddToCart = (id, qty) => {
@@ -55,7 +58,7 @@ class CoffeeControl extends React.Component {
       this.setState({
         displayItem: item,
         cart: updatedCart,
-        viewMessage: "Items added to cart"
+        viewMessage: "This item has been added to your cart"
       });
     }
   }

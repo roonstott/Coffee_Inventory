@@ -11,14 +11,17 @@ function NewToCart({item, onAddToCart, message}) {
 
   return (
     <React.Fragment>
-    <div>
-      <form onSubmit={addToCart}>
-        <label>Enter the quantity in pounds (lbs)</label>
-        <input type="text" name="qty" placeholder='Quantity' />
+    <div className="space-y-10">
+
+      <p className="text-center">{item.name}</p>
+
+      <form className="space-x-10 text-center" onSubmit={addToCart}>
+        <input type="text" name="qty" placeholder='Quantity (lbs)' />
         <button type="submit">Add To Cart</button>
       </form>      
-      <p>{item.name}</p>
+      
       <p>{message}</p>
+
     </div>
   </React.Fragment>
   )
