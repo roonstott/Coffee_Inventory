@@ -9,28 +9,48 @@ function Cart ({cart, onCartEdit, onPlaceOrder, message}) {
     onCartEdit(id, changeAmt);    
   }
 
-  return (
-    <React.Fragment>
+  let display;
+
+  if (cart.length === 0) {
+    display = <p>There are no items in your cart</p>
+  } else {
+    display =
+    <div>
       <div>
         {
           cart.map(item => {
             return (
-              <div className="flex" key={item.id}>
-                <p>{item.name}</p>
-                <p>Inventory: {item.quantityLbs}</p>
-                <p>Order Amount: {item.orderAmt}</p>
-                <form onSubmit={changeOrder}>
-                  <label>Change Order Amount</label>
-                  <input name="changeAmt" type="text" />
-                  <input type="hidden" name="id" value={item.id} />
-                  <button type="submit">Update Order</button>
-                </form>
+              <div className="flex flex-row justify-around m-y-10" key={item.id}>
+                <div className='flex flex-col m-4'>
+                    <p>{item.name}</p>
+                    <p>Inventory: {item.quantityLbs}</p>
+                    <p>Order Amount: {item.orderAmt}</p>
+                    <p>Price: ${item.pricePerLb} per Lb</p>
+                </div>
+                <div className="">
+                  <form onSubmit={changeOrder}>
+                    <input name="changeAmt" type="text" placeholder="change order amount" className="m-10"/>
+                    <input type="hidden" name="id" value={item.id} />
+                    <button className="border-2 border-black p-2 rounded-lg outline bg-red-200" type="submit">Update Order</button>
+                  </form>
+                </div>
               </div>
             )
           })
         }
       </div>
-      <button onClick={onPlaceOrder}>Place Order</button>
+      <div className='flex justify-around'>
+        <button className="border-2 border-black p-2 rounded-lg outline outline-offset-2" onClick={onPlaceOrder}>Place Order</button>
+      </div>
+    </div>
+  }
+
+  return (
+    <React.Fragment>
+       <div className="flex justify-center">
+        <h2 className="align-center font-mono text-4xl">Your Cart</h2>
+      </div>   
+      {display}
       <p>{message}</p>
     </React.Fragment>
   )

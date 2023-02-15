@@ -35,70 +35,16 @@ const coffeeInventoryList = [
   },
 
   {
-    name: "Guatemala La Antigua Los Volcanes", 
-    origin: "Finca Covadonga and Finca La Guatelupe", 
-    pricePerLb: 17.50, 
-    roast: "medium",
-    tastingNotes: "Cocoa & Hard Candy Sweetness", 
-    quantityLbs: 130, 
-    soldOut: false,
-    id: v4()
-  },
-
-  {
-    name: "Guatemala La Antigua Los Volcanes", 
-    origin: "Finca Covadonga and Finca La Guatelupe", 
-    pricePerLb: 17.50, 
-    roast: "medium",
-    tastingNotes: "Cocoa & Hard Candy Sweetness", 
-    quantityLbs: 130, 
-    soldOut: false,
-    id: v4()
-  },
-  
-  {
-    name: "Guatemala La Antigua Los Volcanes", 
-    origin: "Finca Covadonga and Finca La Guatelupe", 
-    pricePerLb: 17.50, 
-    roast: "medium",
-    tastingNotes: "Cocoa & Hard Candy Sweetness", 
-    quantityLbs: 130, 
-    soldOut: false,
-    id: v4()
-  },
-
-  {
-    name: "Guatemala La Antigua Los Volcanes", 
-    origin: "Finca Covadonga and Finca La Guatelupe", 
-    pricePerLb: 17.50, 
-    roast: "medium",
-    tastingNotes: "Cocoa & Hard Candy Sweetness", 
-    quantityLbs: 130, 
-    soldOut: false,
-    id: v4()
-  },
-
-  {
-    name: "Guatemala La Antigua Los Volcanes", 
-    origin: "Finca Covadonga and Finca La Guatelupe", 
-    pricePerLb: 17.50, 
-    roast: "medium",
-    tastingNotes: "Cocoa & Hard Candy Sweetness", 
-    quantityLbs: 130, 
-    soldOut: false,
-    id: v4()
-  },
-
-  {
-    name: "Guatemala La Antigua Los Volcanes", 
-    origin: "Finca Covadonga and Finca La Guatelupe", 
-    pricePerLb: 17.50, 
-    roast: "medium",
-    tastingNotes: "Cocoa & Hard Candy Sweetness", 
+    name: "Tina's Stomach Turner", 
+    origin: "NE PDX", 
+    pricePerLb: 4, 
+    roast: "scorched",
+    tastingNotes: "Chinchilla, dirty socks, moldy persimmon", 
     quantityLbs: 130, 
     soldOut: false,
     id: v4()
   }
+  
 ]
 
 export default coffeeInventoryList;

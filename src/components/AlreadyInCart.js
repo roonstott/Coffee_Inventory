@@ -11,7 +11,7 @@ function AlreadyInCart({item, message, cartEdit}) {
     <React.Fragment>
       <p>{message}</p>
 
-      <div className=" flex flex-row border-2 border-black">
+      <div className=" flex flex-row border border-slate-400">
 
         <div className="basis-1/3 flex-col">
           <p>{item.name}</p>

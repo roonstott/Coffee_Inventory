@@ -6,6 +6,7 @@ import CoffeeDetail from './CoffeeDetail';
 import Home from './Home'
 import About from './About';
 import Cart from './Cart';
+import Admin from './Admin';
 
 class CoffeeControl extends React.Component {
   constructor (props) {
@@ -95,8 +96,15 @@ class CoffeeControl extends React.Component {
     })    
   }
 
-  render() {
+  handleAddSack = (newSack) => {
+    const updatedInventory = this.state.inventory.concat(newSack);
+    this.setState({
+      inventory: updatedInventory,
+      showView: "Buy"
+    });
+  }
 
+  render() {
     let currentView;
     if (this.state.displayItem) {
       currentView = <CoffeeDetail onAddToCart={this.handleAddToCart} message={this.state.viewMessage} onBackClick={this.handleBackClick} item={this.state.displayItem} cart={this.state.cart} onCartEdit={this.handleCartEdit}/>
@@ -108,6 +116,8 @@ class CoffeeControl extends React.Component {
       currentView = <Cart cart={this.state.cart} onCartEdit={this.handleCartEdit} onPlaceOrder={this.handlePlaceOrder} message={this.state.viewMessage} />
     } else if (this.state.showView === "Buy") {
       currentView = <CoffeeGallery onItemClick={this.handleItemClick} galleryDisplay={this.state.inventory}/>
+    } else if (this.state.showView === "Admin") {
+      currentView = <Admin onAddSack={this.handleAddSack} />
     } else {
       currentView = <Home />
     }

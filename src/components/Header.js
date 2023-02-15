@@ -8,7 +8,9 @@ function Header ({onNavBarClick, cartQty}) {
           <button onClick={() => onNavBarClick("Home")}>Home</button>
           <button onClick={() => onNavBarClick("Buy")}>Buy Beans</button>
           <button onClick={() => onNavBarClick("About")}>About Us</button>
-          <button onClick={() => onNavBarClick("Cart")}>Your Cart({cartQty})</button> 
+          <button onClick={() => onNavBarClick("Cart")}>Your Cart({cartQty})</button>
+          <button onClick={() => onNavBarClick("Admin")}>Admin</button>
+
         </div>
       </div>
     </React.Fragment>

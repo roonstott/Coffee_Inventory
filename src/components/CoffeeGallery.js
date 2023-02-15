@@ -8,7 +8,7 @@ function CoffeeGallery ({galleryDisplay, onItemClick}) {
         let tile;       
         if (index%3 === column) {
           tile = (        
-            <div onClick={() => onItemClick(item.id)} key={item.id} className="flex-col justify border-2 border-black p-4 rounded-lg outline outline-offset-2 bg-rose-100">
+            <div onClick={() => onItemClick(item.id)} key={item.id} className="flex-col justify border-2 border-black p-4 rounded-lg outline outline-offset-2 bg-rose-100 mx-4">
               <p>{item.name}</p>
               <p>{item.origin}</p>
               <p>{item.pricePerLb}</p>
@@ -25,6 +25,9 @@ function CoffeeGallery ({galleryDisplay, onItemClick}) {
 
   return (
     <React.Fragment>
+       <div className="flex justify-center">
+        <h2 className="align-center font-mono text-4xl">Shop Beans</h2>
+      </div>
       <div className="flex justify-around m-16">
         <div className="flex-col space-y-10">{renderTile(0)}</div>
         <div className="flex-col space-y-10">{renderTile(1)}</div>

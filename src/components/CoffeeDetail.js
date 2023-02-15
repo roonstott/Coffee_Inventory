@@ -14,7 +14,10 @@ function CoffeeDetail ({item, onBackClick, onAddToCart, onCartEdit, message, car
 
   return (
    <React.Fragment>
-    <div className="border-2 border-black">
+    <div className="flex justify-center">
+      <h2 className="align-center font-mono text-4xl">{item.name}</h2>
+    </div>
+    <div className="">
       {view}
       <button className="border-2 border-black p-2 rounded-lg outline outline-offset-2" onClick={onBackClick}>Back To All Coffee</button>
     </div>
