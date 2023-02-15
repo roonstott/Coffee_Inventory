@@ -32,7 +32,7 @@ _This web app represents a combined retail site and inventory tracker for a fict
 
 ## Component Diagram
 
-
+![Component Diagram](./readme_images/comp_diagram.jpeg)
 
 ## Available Scripts
 
