@@ -17,8 +17,9 @@ function Admin ({onAddSack}) {
       soldOut: false,
       id: v4()
     }
-    console.log(newSack)
-    onAddSack(newSack);
+    if(!isNaN(newSack.pricePerLb) && !isNaN(newSack.quantityLbs)) {
+      onAddSack(newSack);
+    }    
   }
 
   return (
