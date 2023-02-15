@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from "prop-types";
+
 
 function CoffeeGallery ({galleryDisplay, onItemClick}) {
 
@@ -37,5 +39,10 @@ function CoffeeGallery ({galleryDisplay, onItemClick}) {
 
   );
 }
+
+CoffeeGallery.propTypes = {
+  onItemClick: PropTypes.func,  
+  galleryDisplay: PropTypes.array  
+};
 
 export default CoffeeGallery; 

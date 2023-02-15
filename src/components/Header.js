@@ -1,4 +1,6 @@
 import React from 'react'; 
+import PropTypes from "prop-types";
+
 
 function Header ({onNavBarClick, cartQty}) {
   return (
@@ -16,5 +18,10 @@ function Header ({onNavBarClick, cartQty}) {
     </React.Fragment>
   )
 }
+
+Header.propTypes = {
+  onNavBarClick: PropTypes.func,  
+  cartQty: PropTypes.number
+};
 
 export default Header;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 
 function Cart ({cart, onCartEdit, onPlaceOrder, message}) {
   
@@ -6,7 +7,9 @@ function Cart ({cart, onCartEdit, onPlaceOrder, message}) {
     event.preventDefault(); 
     const changeAmt = parseInt(event.target.changeAmt.value);
     const id = event.target.id.value;
-    onCartEdit(id, changeAmt);    
+    if(! isNaN(changeAmt)) {
+      onCartEdit(id, changeAmt);   
+    } 
   }
 
   let display;
@@ -55,5 +58,12 @@ function Cart ({cart, onCartEdit, onPlaceOrder, message}) {
     </React.Fragment>
   )
 }
+
+Cart.propTypes = {
+  cart: PropTypes.array,
+  onCartEdit: PropTypes.func,
+  onPlaceOrder: PropTypes.func,
+  message: PropTypes.string
+};
 
 export default Cart; 

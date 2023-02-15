@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from "prop-types";
+
 
 function NewToCart({item, onAddToCart, message}) {
 
@@ -6,7 +8,9 @@ function NewToCart({item, onAddToCart, message}) {
     event.preventDefault();
     const qty = parseInt(event.target.qty.value);
     const id = item.id;
-    onAddToCart(id, qty);
+    if (!isNaN(qty)) {    
+      onAddToCart(id, qty);
+    }
   }
 
   return (
@@ -26,5 +30,11 @@ function NewToCart({item, onAddToCart, message}) {
   </React.Fragment>
   )
 }
+
+NewToCart.propTypes = {
+  item: PropTypes.object,
+  onAddToCart: PropTypes.func,  
+  message: PropTypes.string 
+};
 
 export default NewToCart

@@ -1,5 +1,7 @@
 import React from 'react';
 import { v4 } from 'uuid';
+import PropTypes from "prop-types";
+
 
 function Admin ({onAddSack}) {
 
@@ -40,5 +42,10 @@ function Admin ({onAddSack}) {
     </React.Fragment>
   )
 }
+
+Admin.propTypes = {
+  onAddSack: PropTypes.func
+};
+
 
 export default Admin;
