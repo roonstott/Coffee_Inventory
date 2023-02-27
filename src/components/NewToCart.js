@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
 
-
 function NewToCart({item, onAddToCart, message}) {
 
   function addToCart(event) {

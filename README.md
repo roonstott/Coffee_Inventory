@@ -19,7 +19,7 @@ _This web app represents a combined retail site and inventory tracker for a fict
 
 * _Clone this repository to your local machine_
 * _Download Node and NPM if you haven't already `https://docs.npmjs.com/downloading-and-installing-node-js-and-npm`_
-* _Navigate to the project directory `cd coffee-inventory` and enter this command: `npm run start`_
+* _Navigate to the project directory `cd coffee-inventory` and enter these commands: `npm install` and `npm run start`_
 * _With the program running, copy the url `http://localhost:3000` into a browser window_
 * _You are now interacting with the app in the browser and can access its functions._
 * _Click `Buy Beans` in the header to see the beans that are available. From that page, click on any given bean to add it to your cart_
