@@ -105,6 +105,22 @@ class CoffeeControl extends React.Component {
     });
   }
 
+  handleEditSack = (sack) => {
+    const updatedInventory = this.state.inventory.filter(el => el.id !== sack.id).concat(sack);
+    this.setState({
+      inventory: updatedInventory,
+      showView: "Buy"
+    })
+  }
+
+  handleDeleteSack = (id) => {
+    const updatedInventory = this.state.inventory.filter(el => el.id !== id);
+    this.setState({
+      inventory: updatedInventory,
+      showView: "Buy"
+    })
+  }
+
   render() {
     let currentView;
     if (this.state.displayItem) {
@@ -118,7 +134,7 @@ class CoffeeControl extends React.Component {
     } else if (this.state.showView === "Buy") {
       currentView = <CoffeeGallery onItemClick={this.handleItemClick} galleryDisplay={this.state.inventory}/>
     } else if (this.state.showView === "Admin") {
-      currentView = <Admin onAddSack={this.handleAddSack} />
+      currentView = <Admin onEdit={this.handleEditSack} onDelete={this.handleDeleteSack} onAddSack={this.handleAddSack} inventory={this.state.inventory} />
     } else {
       currentView = <Home />
     }
