@@ -28,7 +28,7 @@ _This web app represents a combined retail site and inventory tracker for a fict
 
 ## Known Bugs
 
-* _There is limited error handling, and in most cases submitting non-numerical values to form fields that require numbers will convert the inventory amount to `NaN`_
+* _No known bugs at this time_
 
 ## Component Diagram
 
