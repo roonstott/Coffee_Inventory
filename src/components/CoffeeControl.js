@@ -16,7 +16,8 @@ class CoffeeControl extends React.Component {
       displayItem: null,
       showView: "Home", 
       cart: [], 
-      viewMessage: ""
+      viewMessage: "", 
+      errorMessage: ""
     }
   }
 
